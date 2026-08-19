@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+.access-console {
+  display: flex;
+  min-height: 100vh;
+  background: #0F1419;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Left panel */
+.console-panel {
+  position: relative;
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  overflow: hidden;
+  background: #0F1419;
+  border-right: 1px solid #232A32;
+}
+
+@media (min-width: 900px) {
+  .console-panel { display: flex; }
+}
+
+.console-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, #1A2129 1px, transparent 1px),
+    linear-gradient(to bottom, #1A2129 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at 30% 40%, black, transparent 70%);
+  z-index: 0;
+}
+
+.console-eyebrow {
+  position: relative;
+  z-index: 1;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #F0A500;
+  margin-bottom: 1.5rem;
+}
+
+.console-boot {
+  position: relative;
+  z-index: 1;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #3FB8AF;
+  white-space: pre-wrap;
+  min-height: 6rem;
+}
+
+.console-cursor {
+  color: #F0A500;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Right side / form */
+.console-form-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.console-card {
+  width: 100%;
+  max-width: 380px;
+  background: #161B22;
+  border: 1px solid #232A32;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+}
+
+.console-card-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #6B7280;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.console-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #E6E8EB;
+  margin: 0 0 1.75rem;
+}
+
+.console-error {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: #F87171;
+  margin-bottom: 1rem;
+}
+
+.console-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.console-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.console-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: #6B7280;
+}
+
+.console-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2A323C;
+  color: #E6E8EB;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.console-field input::placeholder {
+  color: #4B5563;
+}
+
+.console-field input:focus {
+  border-bottom: 1px solid #F0A500;
+  box-shadow: 0 1px 0 0 #F0A500;
+}
+
+.console-submit {
+  margin-top: 0.5rem;
+  background: #F0A500;
+  color: #0F1419;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.console-submit:hover {
+  background: #FFB627;
+}
+
+.console-submit:active {
+  transform: scale(0.98);
+}
+
+.console-submit:focus-visible {
+  outline: 2px solid #3FB8AF;
+  outline-offset: 2px;
+}
+
+.console-tip {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+.console-tip a {
+  color: #3FB8AF;
+}
+
+.console-alt {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #9CA3AF;
+}
+
+.console-alt a {
+  color: #F0A500;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .console-cursor { animation: none; }
+}
+
+.console-field input:-webkit-autofill,
+.console-field input:-webkit-autofill:hover,
+.console-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #E6E8EB;
+  -webkit-box-shadow: 0 0 0px 1000px #161B22 inset;
+  box-shadow: 0 0 0px 1000px #161B22 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #E6E8EB;
+}

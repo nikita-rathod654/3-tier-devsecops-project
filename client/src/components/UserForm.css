@@ -1,0 +1,104 @@
+.uf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.uf-fields {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.uf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.uf-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: #6B7280;
+}
+
+.uf-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2A323C;
+  color: #E6E8EB;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.uf-field input::placeholder {
+  color: #4B5563;
+}
+
+.uf-field input:focus {
+  border-bottom: 1px solid #F0A500;
+  box-shadow: 0 1px 0 0 #F0A500;
+}
+
+.uf-field input:-webkit-autofill,
+.uf-field input:-webkit-autofill:hover,
+.uf-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #E6E8EB;
+  -webkit-box-shadow: 0 0 0px 1000px #161B22 inset;
+  box-shadow: 0 0 0px 1000px #161B22 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #E6E8EB;
+}
+
+.uf-button-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.uf-submit {
+  background: #F0A500;
+  color: #0F1419;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.uf-submit:hover {
+  background: #FFB627;
+}
+
+.uf-submit:active {
+  transform: scale(0.98);
+}
+
+.uf-cancel {
+  background: transparent;
+  color: #9CA3AF;
+  border: 1px solid #2A323C;
+  border-radius: 6px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.uf-cancel:hover {
+  border-color: #F87171;
+  color: #F87171;
+}
+
+.uf-submit:focus-visible,
+.uf-cancel:focus-visible {
+  outline: 2px solid #3FB8AF;
+  outline-offset: 2px;
+}
