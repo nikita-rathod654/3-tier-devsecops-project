@@ -1,8 +1,7 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: backend
+  name: backend
   namespace: prod
   labels:
     app: backend
@@ -18,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-         image: nikitarathod44/backend:latest
+          image: nikitarathod44/backend:latest
           ports:
             - containerPort: 5000
           env:
@@ -40,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: backend-svc
   namespace: prod
 spec:
   selector:
