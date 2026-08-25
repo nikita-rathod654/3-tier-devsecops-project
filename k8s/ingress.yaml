@@ -10,24 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: nikita.com
-      http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: backend
-                port:
-                  number: 5000
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-svc
-                port:
-                  number: 80
-    - host: www.nikita.com
+    - host: usersphere.duckdns.org
       http:
         paths:
           - path: /api
@@ -46,6 +29,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - nikita.com
-        - www.nikita.com
-      secretName: nikita-co-tls
+        - usersphere.duckdns.org
+      secretName: usersphere-duckdns-tls
