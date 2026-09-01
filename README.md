@@ -1,31 +1,27 @@
-# 3-Tier DevSecOps Project
+# CI/CD Pipeline → Kubernetes 3-Tier App
 
-This repository contains a simple Node.js API and a React client used for a user management demo. Follow the steps below to get the project running locally.
+An end-to-end DevSecOps pipeline: a developer's `git push` flows through Jenkins CI, a multi-stage Docker build, and delivery to Kubernetes (Dev → Prod), with Prometheus + Grafana monitoring the running app.
 
-## Setup      
+## Architecture
 
-1. Install Node.js (version 18 or later is recommended).        
-2. Install dependencies for both the API and client:
+<img width="1018" height="980" alt="CICD Pipeline to Kubernetes 3-Tier Application" src="https://github.com/user-attachments/assets/1c6ac783-c781-4530-908b-60a3a95b1f4b" />
 
-   ```bash
-   cd api && npm install
-   cd ../client && npm install
-   ```
+**Flow:** Git push → Jenkins CI (build, test, Docker build, push image) → deploy to Dev K8s → promote to Prod K8s → 3-tier app (Frontend → Backend → Database) → Prometheus/Grafana monitoring on Prod.
 
-3. Start the API server:
+## Tech stack
 
-   ```bash
-   cd api
-   npm start
-   ```
+Git · Jenkins · Docker (multi-stage) · Kubernetes · Prometheus · Grafana
 
-4. In a separate terminal, start the React client:
+## What this demonstrates
 
-   ```bash
-   cd client
-   npm start
-   ```
+- Building a CI pipeline in Jenkins triggered by GitHub webhooks
+- Writing a multi-stage Dockerfile for lean, production-ready images
+- Environment promotion (Dev → Prod) using the same built artifact, no rebuilds
+- Deploying and managing a 3-tier app on Kubernetes across two clusters
+- Setting up Prometheus + Grafana for runtime observability
 
-5. Open `http://localhost:3000` in your browser to use the application.
+## Notes
 
-
+- Branching strategy: `dev` / `prod` for explicit environment promotion.
+- Same image is promoted from Dev to Prod — no rebuild between environments.
+- Monitoring is scoped to the Prod cluster.
