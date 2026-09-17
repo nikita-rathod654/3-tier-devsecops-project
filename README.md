@@ -26,3 +26,16 @@ Terraform · Git · Jenkins · Docker (multi-stage) · Kubernetes · Prometheus 
 - Branching strategy: `dev`/ `prod` for explicit environment promotion.
 - Same image is promoted from Dev to Prod — no rebuild between environments.
 - Monitoring is scoped to the Prod cluster.
+
+## Screenshots
+
+<img width="1351" height="673" alt="jenkins pipeline" src="https://github.com/user-attachments/assets/8e364902-87ce-4833-be69-cb888964c72d" />
+
+<img width="1352" height="690" alt="image" src="https://github.com/user-attachments/assets/b9cd0f1a-ad03-4625-b9f8-77e7b513054e" />
+
+<img width="1362" height="686" alt="image" src="https://github.com/user-attachments/assets/bfab9fa3-8925-4750-8214-3cfdbd636ee0" />
+
+<img width="1067" height="230" alt="image" src="https://github.com/user-attachments/assets/366eb1c3-c9c6-4511-b86e-a66748ff4814" />
+
+<img width="1352" height="699" alt="image" src="https://github.com/user-attachments/assets/e2f601cb-bb9a-42c8-a907-309b54a42623" />
+
